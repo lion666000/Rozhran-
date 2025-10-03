@@ -15,4 +15,8 @@ public interface IStreamingService {
     public void stop();
 
     public boolean prehrava();
+
+    public String toString();
+
+    public int getPocetSpusteni();
 }

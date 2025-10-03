@@ -5,6 +5,7 @@
 class SmartLight implements ISmartDevice {
     private String nazev;
     private boolean zapnuto;
+    private int pocetSpusteni = 0;
 
     /**
      * Vytvoří nové chytré světlo s daným názvem.
@@ -21,6 +22,7 @@ class SmartLight implements ISmartDevice {
      */
     @Override
     public void zapni() {
+        pocetSpusteni++;
         zapnuto = true;
         System.out.println(nazev + " je zapnuto.");
     }
@@ -46,6 +48,26 @@ class SmartLight implements ISmartDevice {
         } else {
             return "vypnuto";
         }
+    }
+
+    public String getNazev() {
+        return nazev;
+    }
+
+    public int getPocetSpusteni() {
+        return pocetSpusteni;
+    }
+
+    public void setNazev(String nazev) {
+        this.nazev = nazev;
+    }
+
+    public boolean isZapnuto() {
+        return zapnuto;
+    }
+
+    public String toString() {
+        return "Název: " + nazev + " ,Stav: " + stav();
     }
 
 }

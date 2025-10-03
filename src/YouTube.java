@@ -1,17 +1,18 @@
-public class Netflix implements IStreamingService {
+public class YouTube implements IStreamingService {
     private boolean prehravani;
     private int pocetSpusteni = 0;
+
     @Override
     public void prehrat(String nazevTitulu) {
         pocetSpusteni++;
         prehravani = true;
-        System.out.println("Přehrávání na Netflixu: " + nazevTitulu);
+        System.out.println("Přehrávání na YouTube: " + nazevTitulu);
     }
 
-      @Override
+    @Override
     public void stop() {
         prehravani = false;
-        System.out.println("Netflix přehrávání ukončeno.");
+        System.out.println("YouTube přehrávání ukončeno.");
     }
 
     public int getPocetSpusteni() {
@@ -24,10 +25,6 @@ public class Netflix implements IStreamingService {
     }
 
     public String toString(){
-        return "Netflix";
+        return "YouTube";
     }
-
-
-
 }
-
